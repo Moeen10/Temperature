@@ -1,11 +1,25 @@
 const ApiKey = `f0a6632597975c9c240497b83eedb315`;
-searchTemperature = () => {
+document.getElementById("go").addEventListener("click", function() {
     const CityName = document.getElementById('city-name').value;
 
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${CityName}&appid=${ApiKey}`)
         .then(res => res.json())
         .then(data => displayTemperature(data, ));
-}
+});
+
+
+var go = document.getElementById("go");
+var txt = document.getElementById("city-name");
+
+txt.addEventListener("keyup", function(event) {
+
+    console.log(12, event.key);
+    if (event.key == 'Enter') {
+        console.log(10);
+        go.click();
+    }
+
+});
 
 const displayTemperature = temp => {
     console.log(temp);
