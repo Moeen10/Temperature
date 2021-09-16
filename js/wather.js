@@ -12,10 +12,10 @@ var go = document.getElementById("go");
 var txt = document.getElementById("city-name");
 
 txt.addEventListener("keyup", function(event) {
-
-    console.log(12, event.key);
-    if (event.key == 'Enter') {
-        console.log(10);
+    console.log(event.key);
+    if (event.key === "Enter") {
+        console.log(55);
+        event.preventDefault();
         go.click();
     }
 
